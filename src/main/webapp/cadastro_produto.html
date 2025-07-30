@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto - Sistema de Gestão de Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="cadastroForm" onsubmit="return validarCadastro()">
+            <h1>Cadastro de Produtos</h1>
+            <div class="input-group">
+                <label for="nomeProduto">Nome do Produto</label>
+                <input type="text" id="nomeProduto" name="nomeProduto">
+                <small class="error-message" id="nomeError"></small>
+            </div>
+            <div class="input-group">
+                <label for="preco">Preço (R$)</label>
+                <input type="text" id="preco" name="preco">
+                <small class="error-message" id="precoError"></small>
+            </div>
+            <div class="input-group">
+                <label for="estoque">Quantidade em Estoque</label>
+                <input type="number" id="estoque" name="estoque">
+                <small class="error-message" id="estoqueError"></small>
+            </div>
+            <button type="submit">Salvar Produto</button>
+        </form>
+    </div>
+    <script src="validacao.js"></script>
+</body>
+</html>
