@@ -1,15 +1,22 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sistema de Gestão de Bar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="form-container">
-        <form id="loginForm">
+        <form id="loginForm" action="login" method="post">
             <h1>Acessar o Sistema</h1>
+            
+            <%
+                if (request.getParameter("erro") != null && request.getParameter("erro").equals("1")) {
+                    out.println("<p style='color:red;'>Usuário ou senha inválidos!</p>");
+                }
+            %>
+            
             <div class="input-group">
                 <label for="usuario">Usuário</label>
                 <input type="text" id="usuario" name="usuario" required>
